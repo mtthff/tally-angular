@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './button-new-tally.component.scss'
 })
 export class ButtonNewTallyComponent {
+  newTally() {
+    
 
+  }
+  get message() {
+    return `The light is On`;
+  }
 }

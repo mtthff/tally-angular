@@ -1,1 +1,12 @@
-<p>tally-icons works!</p>
+<img [src]="tally.lock ? imgLock : imgUnlock" id="lock{{ tally.id }}" class="float-start mx-1 lock"
+    (click)="lockTally(tally.id)">
+<img [src]="tally.archive ? imgUnarchive : imgArchive" id="archive{{ tally.id }}" class="float-start mx-2 archive"
+    (click)="archiveTally(tally.id)">
+<img [src]="imgShare" id="share{{ tally.id }}" class="float-start mx-1 share" 
+    (click)="shareTally(tally.id)">
+<img [src]="imgDelete" id="delete{{ tally.id }}" class="float-start mx-2 delete" 
+    (click)="deleteTally(tally.id)">
+<img [src]="imgEdit" id="edit{{ tally.id }}" class="float-start mx-2 edit"
+    (click)="editTally(tally.id)">
+
+<!-- <img src="assets/img/edit_FILL0_wght400_GRAD0_opsz24.svg" id="edit{{ tally.id }}" class="float-start mx-2 edit" data-bs-toggle="modal" data-bs-target="#editModal"> -->

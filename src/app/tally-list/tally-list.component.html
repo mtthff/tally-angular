@@ -1,1 +1,15 @@
-<p>tally-list works!</p>
+<div class="row gy-3">
+    @for (tally of tallys; track tally.id) {
+    <span class="align-items-start">{{ tally.name }}</span>
+    <div class="col-6 text-{{ tally.class }}-emphasis bg-{{ tally.class }}-subtle border border-{{ tally.class }} rounded-3">
+        <button type="button" class="btn counter btn-{{ tally.class }} py-2 counterButton"
+            id="counterButton{{ tally.id }}" (click)="incrTally(tally.id)">Count</button>
+        <span id="name{{ tally.id}}" [innerHTML]="generateTallyImages(tally.counter)"></span>
+    </div>
+
+    <!-- <div class="col-sm-12 col-lg-6"> -->
+        <div class="col-6">
+        <app-tally-icons [tally]="tally"></app-tally-icons>
+    </div>
+    }
+</div>
