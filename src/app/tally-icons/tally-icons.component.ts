@@ -56,18 +56,31 @@ export class TallyIconsComponent {
   }
 
   lockTally(id: number) {
-    console.log("lock - id: " + id);
     const index = this.tallys.findIndex(item => item.id === id);
     if (index !== -1) {
       this.tallys[index].lock = !this.tallys[index].lock;
+      if(this.tallys[index].lock){
+        let counterButton = document.getElementById('counterButton' + id) as HTMLButtonElement;
+        counterButton.disabled = true;
+      }else{
+        let counterButton = document.getElementById('counterButton' + id) as HTMLButtonElement;
+        counterButton.disabled = false;
+      }
     }
   }
-
+  
   archiveTally(id: number) {
     console.log("archive - id: " + id);
     const index = this.tallys.findIndex(item => item.id === id);
     if (index !== -1) {
       this.tallys[index].archive = !this.tallys[index].archive;
+      if(this.tallys[index].archive){
+        let counterButton = document.getElementById('counterButton' + id) as HTMLButtonElement;
+        counterButton.disabled = true;
+      }else{
+        let counterButton = document.getElementById('counterButton' + id) as HTMLButtonElement;
+        counterButton.disabled = false;
+      }
     }
   }
 }
