@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { TallyIconsComponent } from "../tally-icons/tally-icons.component";
 import { DatenService } from '../shared/daten.service'; 
 import { Tally } from '../shared/tally';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-tally-list',
   standalone: true,
   imports: [
-    TallyIconsComponent
+    TallyIconsComponent,
+    CommonModule,
   ],
   templateUrl: './tally-list.component.html',
   styleUrl: './tally-list.component.scss'
@@ -18,6 +20,7 @@ import { Tally } from '../shared/tally';
 export class TallyListComponent {
 
   tallys!: Tally[];
+ heini: string = 'Heini';
 
   constructor(private datenService: DatenService) {
 
